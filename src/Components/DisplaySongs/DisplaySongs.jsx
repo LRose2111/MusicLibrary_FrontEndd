@@ -24,7 +24,7 @@ const DisplaySongs = (props) => {
                 <th>Album</th>            
                 <th>Release Date</th>
                 <th>Genre</th>
-                <th>Option(s)</th>
+                <th>Likes</th>
             </tr>
         </thead>
         <tbody>
