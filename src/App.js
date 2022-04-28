@@ -15,19 +15,19 @@ function App() {
   }, [])
 
   async function getAllSongs(){
-    let response = await axios.get('http://127.0.0.1:8000/music/');
+    let response = await axios.get('http://127.0.0.1:8000/api/music/');
     setSongs(response.data);
   }
 
   async function createSong(newSong){
-    let response = await axios.post('http://127.0.0.1:8000/music/', newSong);
+    let response = await axios.post('http://127.0.0.1:8000/api/music', newSong);
     if(response.status === 201){
       await getAllSongs();
     }
   } 
 
   async function deleteSong(song){
-    let response = await axios.delete(`http://127.0.0.1:8000/music/${song.id}/`);
+    let response = await axios.delete(`http://127.0.0.1:8000/api/music/${song.id}/`);
     if(response.status === 200){
       await getAllSongs();
     }
